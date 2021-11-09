@@ -54,10 +54,18 @@ h2 {
 h3 {
 	font-size: 24px;
 	margin-bottom: 10px;
+	@media screen and (max-width: 768px) {
+		font-size: 22px;
+		margin-bottom: 20px;
+	}
 }
 h4 {
 	font-size: 24px;
 	margin-bottom: 10px;
+	@media screen and (max-width: 768px) {
+		font-size: 22px;
+		margin-bottom: 20px;
+	}
 }
 ol:not([class]), ul:not([class]) {
 	margin-bottom: 12px;
@@ -119,6 +127,9 @@ img {
 	margin:0 auto;
 	margin-bottom:20px;
 }
+section {
+	padding:50px 0;
+}
 .float_right {
 	float:right;
 	margin-left:20px;
@@ -175,9 +186,17 @@ img {
 		clear: both;
 	}
 }
+
+/* flexbox */
 .flexbox {
 	display: flex;
 	flex-wrap:wrap;
+	justify-content: space-between;
+}
+
+/* gridbox */
+.gridbox {
+	display: grid;
 	justify-content: space-between;
 }
 
@@ -218,7 +237,6 @@ img {
 .scroll {
 	overflow-y: auto;
 	-ms-scroll-chaining: none;
-	overscroll-behavior: contain;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	scrollbar-width: thin;
@@ -253,7 +271,6 @@ img {
 .scroll_horizontal {
 	overflow-x: auto;
 	-ms-scroll-chaining: none;
-	overscroll-behavior: contain;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	scrollbar-width: thin;
@@ -282,6 +299,16 @@ img {
 }
 .scroll_horizontal::-webkit-scrollbar-thumb:vertical {
 	min-height: 4px; 
+}
+
+/* table */
+table {
+	border-collapse: collapse;
+	th, td {
+		vertical-align: middle;
+		text-align: center;
+		padding:13px 10px;
+	}
 }
 
 /* form */

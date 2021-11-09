@@ -30,7 +30,8 @@ body {
   width: 100%; }
 
 body {
-  line-height: 1; }
+  line-height: 1;
+  -webkit-text-size-adjust: none; }
 
 *,
 *::before,
@@ -46,7 +47,8 @@ ol, ul, nav, menu {
   list-style: none; }
 
 img, video, canvas {
-  max-width: 100%; }
+  max-width: 100%;
+  height: auto; }
 
 img {
   vertical-align: bottom; }
@@ -1539,6 +1541,133 @@ iframe {
   font-display: swap;
   src: local("Catamaran-Black"), url("../fonts/Catamaran-Black.woff") format("woff"); }
 
+/* Metropolis */
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local("Metropolis-Thin"), url("../fonts/Metropolis-Thin.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: local("Metropolis-ThinItalic"), url("../fonts/Metropolis-ThinItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local("Metropolis-ExtraLight"), url("../fonts/Metropolis-ExtraLight.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: local("Metropolis-ExtraLightItalic"), url("../fonts/Metropolis-ExtraLightItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Metropolis-Light"), url("../fonts/Metropolis-Light.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Metropolis-LightItalic"), url("../fonts/Metropolis-LightItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Metropolis-Regular"), url("../fonts/Metropolis-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Metropolis-Italic"), url("../fonts/Metropolis-Italic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Metropolis-Medium"), url("../fonts/Metropolis-Medium.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Metropolis-MediumItalic"), url("../fonts/Metropolis-MediumItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Metropolis-SemiBold"), url("../fonts/Metropolis-SemiBold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Metropolis-SemiBoldItalic"), url("../fonts/Metropolis-SemiBoldItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Metropolis-Bold"), url("../fonts/Metropolis-Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Metropolis-BoldItalic"), url("../fonts/Metropolis-BoldItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local("Metropolis-ExtraBold"), url("../fonts/Metropolis-ExtraBold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: local("Metropolis-ExtraBoldItalic"), url("../fonts/Metropolis-ExtraBoldItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Metropolis-Black"), url("../fonts/Metropolis-Black.woff") format("woff"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Metropolis-BlackItalic"), url("../fonts/Metropolis-BlackItalic.woff") format("woff"); }
+
 /* ============================ mixin */
 /* =========================== polyfills focus-visible */
 .js-focus-visible :focus:not(.focus-visible) {
@@ -1578,27 +1707,38 @@ h2 {
 h3 {
   font-size: 24px;
   margin-bottom: 10px; }
+  @media screen and (max-width: 768px) {
+    h3 {
+      font-size: 22px;
+      margin-bottom: 20px; } }
 
 h4 {
   font-size: 24px;
   margin-bottom: 10px; }
+  @media screen and (max-width: 768px) {
+    h4 {
+      font-size: 22px;
+      margin-bottom: 20px; } }
 
 ol:not([class]), ul:not([class]) {
   margin-bottom: 12px; }
 
 ol:not([class]) li, ul:not([class]) li {
   display: table;
-  padding-left: 25px;
   position: relative; }
+
+table ol:not([class]) li, table ul:not([class]) li, .table ol:not([class]) li, .table ul:not([class]) li {
+  display: block; }
 
 ol:not([class]) {
   counter-reset: number; }
 
 ol:not([class]) li::before {
   counter-increment: number;
-  content: counter(number) "." " ";
-  position: absolute;
-  left: 5px; }
+  content: counter(number) "." " "; }
+
+ul:not([class]) li {
+  padding-left: 25px; }
 
 ul:not([class]) li::before {
   position: absolute;
@@ -1633,9 +1773,12 @@ i, em {
   font-style: italic; }
 
 img {
+  display: block;
   margin: 0 auto;
-  margin-bottom: 20px;
-  display: block; }
+  margin-bottom: 20px; }
+
+section {
+  padding: 50px 0; }
 
 .float_right {
   float: right;
@@ -1690,26 +1833,32 @@ img {
   display: block;
   clear: both; }
 
+/* flexbox */
 .flexbox {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
 
+/* gridbox */
+.gridbox {
+  display: grid;
+  justify-content: space-between; }
+
 /* breadcrumbs */
 .breadcrumbs {
-  margin-bottom: 10px;
   justify-content: flex-start;
-  align-content: center; }
+  align-content: center;
+  margin-bottom: 10px; }
   .breadcrumbs li, .breadcrumbs a {
     font-size: 12px; }
   .breadcrumbs li {
-    margin-right: 15px;
-    color: #fff; }
+    color: #fff;
+    margin-right: 15px; }
     .breadcrumbs li:last-child {
       margin-right: 0px; }
   .breadcrumbs a {
-    color: rgba(255, 255, 255, 0.5);
-    position: relative; }
+    position: relative;
+    color: rgba(255, 255, 255, 0.5); }
     .breadcrumbs a:hover {
       color: #fff; }
     .breadcrumbs a::after {
@@ -1723,18 +1872,16 @@ img {
 
 /* scroll vertical */
 .scroll {
-  -ms-overflow-y: auto;
   overflow-y: auto;
   -ms-scroll-chaining: none;
-  overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   scrollbar-width: thin;
   scrollbar-color: #DCDFE9 transparent; }
 
 .scroll::-webkit-scrollbar {
-  height: 50%;
-  width: 4px; }
+  width: 4px;
+  height: 50%; }
 
 .scroll::-webkit-scrollbar-track {
   background-color: transparent; }
@@ -1756,15 +1903,44 @@ img {
   min-width: 4px; }
 
 /* scroll horizontal */
+.scroll_horizontal {
+  overflow-x: auto;
+  -ms-scroll-chaining: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scrollbar-width: thin;
+  scrollbar-color: #DCDFE9 transparent; }
+
 .scroll_horizontal::-webkit-scrollbar {
   width: 50%;
   height: 4px; }
+
+.scroll_horizontal::-webkit-scrollbar-track {
+  background-color: transparent; }
+
+.scroll_horizontal::-webkit-scrollbar-thumb {
+  background-color: #DCDFE9;
+  border-radius: 5px; }
+
+.scroll_horizontal::-webkit-scrollbar-thumb:hover {
+  background-color: #DCDFE9; }
+
+.scroll_horizontal::-webkit-scrollbar-thumb:active {
+  background-color: #DCDFE9; }
 
 .scroll_horizontal::-webkit-scrollbar-thumb:horizontal {
   min-width: 50%; }
 
 .scroll_horizontal::-webkit-scrollbar-thumb:vertical {
   min-height: 4px; }
+
+/* table */
+table {
+  border-collapse: collapse; }
+  table th, table td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 13px 10px; }
 
 /* form */
 form input, form textarea {
@@ -1853,3 +2029,266 @@ input[type="search"]::-webkit-search-results-decoration {
   max-width: 1270px;
   padding: 0 15px;
   margin: 0 auto; }
+
+/* menu */
+.menu__item {
+  position: relative;
+  z-index: 1;
+  margin: 0 15px; }
+  .menu__item:last-child {
+    margin-right: 0; }
+  .menu__item.arr {
+    position: relative; }
+    .menu__item.arr .menu__link {
+      padding-right: 20px; }
+      .menu__item.arr .menu__link::after {
+        transition: transform .3s linear;
+        width: 11px;
+        height: 7px;
+        background: center center / cover no-repeat;
+        background-image: url("../img/sprite.svg#down-arrow");
+        right: 0;
+        top: 9px; }
+    .menu__item.arr:hover .menu__link::after {
+      transform: rotate(-180deg); }
+    .menu__item.arr:hover .downmenu {
+      display: block; }
+  .menu__item:hover .menu__link {
+    color: #272529; }
+    .menu__item:hover .menu__link::before {
+      width: 100%; }
+
+.menu__link {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  color: #272529; }
+  .menu__link::before, .menu__link::after {
+    position: absolute;
+    content: ""; }
+  .menu__link::before {
+    transition: width .3s linear;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #1AE48E; }
+
+.downmenu {
+  position: absolute;
+  display: none;
+  width: 170px;
+  transform: translatex(-50%);
+  left: 50%;
+  top: 0;
+  padding-top: 46px; }
+
+.submenu {
+  position: relative;
+  border-radius: 0 0 8px 8px;
+  background-color: #FFFFFF;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px 10px;
+  margin-left: 0; }
+  .submenu::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0px 40px 40px -40px rgba(0, 0, 0, 0.1) inset, 0px 0 40px -40px rgba(0, 0, 0, 0.1) inset; }
+  .submenu li {
+    text-align: center;
+    margin-bottom: 5px; }
+    .submenu li:last-child {
+      margin-bottom: 0; }
+  .submenu a {
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    color: #989AA0; }
+    .submenu a:hover {
+      color: #1AE48E; }
+
+/* hamburger */
+.hamburger {
+  display: none;
+  width: 25px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  border: 0;
+  overflow: visible;
+  margin: 0;
+  margin-left: 15px; }
+
+.hamburger:hover, .hamburger.is-active:hover {
+  opacity: 0.7; }
+
+.hamburger.is-active .hamburger-box {
+  width: 25px; }
+
+.hamburger.is-active .hamburger-inner {
+  background-color: #277BFF; }
+
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #277BFF; }
+
+.hamburger-box {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 20px; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%; }
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 1.5px;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease; }
+
+.hamburger-inner {
+  background-color: #277BFF; }
+
+.hamburger-inner::before, .hamburger-inner::after {
+  background-color: #277BFF;
+  right: 0; }
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block; }
+
+.hamburger-inner::before {
+  width: 15px;
+  top: 8px; }
+
+.hamburger-inner::after {
+  width: 25px;
+  bottom: 8px; }
+
+.hamburger--spin .hamburger-inner {
+  width: 20px;
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--spin .hamburger-inner::before {
+  transition: top 0.1s 0.25s ease-in,  opacity 0.1s ease-in; }
+
+.hamburger--spin .hamburger-inner::after {
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--spin.is-active .hamburger-inner {
+  width: 24px;
+  height: 2px;
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.hamburger--spin.is-active .hamburger-inner::before {
+  height: 2px;
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+
+.hamburger--spin.is-active .hamburger-inner::after {
+  height: 2px;
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+/* navigation mob */
+.navigation_mob {
+  position: fixed;
+  z-index: 101;
+  display: none;
+  width: 320px;
+  height: 100%;
+  right: -320px;
+  bottom: 0;
+  top: 53px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  padding-top: 52px; }
+  .navigation_mob .menu {
+    text-align: center; }
+  .navigation_mob .menu__item {
+    padding: 10px 0;
+    margin-left: 0; }
+    .navigation_mob .menu__item.arr::after {
+      transform: none; }
+  .navigation_mob .menu__link {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px; }
+  .navigation_mob .downmenu {
+    position: relative;
+    width: 100%;
+    transform: none;
+    left: auto;
+    padding-top: 0px; }
+  .navigation_mob .submenu {
+    background: transparent;
+    box-shadow: none;
+    padding-bottom: 0; }
+    .navigation_mob .submenu::after {
+      display: none; }
+    .navigation_mob .submenu a {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px; }
+
+.noclick .downmenu {
+  display: block; }
+
+.noclick.arr {
+  padding: 10px 0;
+  margin-left: 0; }
+  .noclick.arr .menu__link::after {
+    transform: rotate(-180deg); }
+  .noclick.arr .menu__link::before {
+    width: 100%; }
+
+.navigation_mob__open {
+  display: block;
+  -webkit-animation: menu .3s linear forwards;
+          animation: menu .3s linear forwards; }
+
+@-webkit-keyframes menu {
+  0 {
+    right: -320px; }
+  100% {
+    right: 0; } }
+
+@keyframes menu {
+  0 {
+    right: -320px; }
+  100% {
+    right: 0; } }
+
+@media screen and (max-width: 768px) {
+  .navigation_desctop .menu {
+    display: none;
+    margin-left: 0; }
+  .hamburger {
+    display: block; } }
