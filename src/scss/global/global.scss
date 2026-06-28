@@ -1,0 +1,414 @@
+/* =========================== all */
+@use '../base/mixins' as *;
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: "Roboto", sans-serif;
+	color: #171616;
+	background: #fff;
+	line-height: 1.5;
+}
+
+.body_scroll {
+	overflow: hidden;
+}
+
+/* heading */
+.h1,h1,.h2,h2,.h3,h3,.h4,h4,.h5,h5 {
+	font-weight: 700;
+}
+
+.h1,h1 {
+	font-size: 32px;
+	line-height: 40px;
+	margin-block-end: 15px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 30px;
+		line-height: 38px;
+	}
+}
+
+.h2,h2 {
+	font-size: 28px;
+	line-height: 32px;
+	margin-block-end: 20px;
+}
+
+.h3,h3 {
+	font-size: 24px;
+	line-height: 30px;
+	margin-block-end: 15px;
+}
+
+.h4,h4 {
+	font-size: 22px;
+	line-height: 30px;
+	margin-block-end: 15px;
+}
+
+.section {
+	margin-block-end: 40px;
+}
+
+/* flexbox */
+.flexbox {
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+}
+
+/* gridbox */
+.gridbox {
+	display: grid;
+	justify-content: space-between;
+}
+
+/* content */
+a, p, ol:not([class]) li, ul:not([class]) li {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+p {
+	margin-block-end:20px;
+
+	&:last-child {
+		margin-block-end: 0;
+	}
+}
+
+a:not([class]) {
+	text-decoration: underline;
+
+	&:hover {
+		color: #D70304;
+	}
+}
+
+.link {
+	display: inline-flex;
+	gap:10px;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 18px;
+	color:#171616;
+	border-bottom:1px solid #D70304;
+	padding-block-end: 6px;
+
+	svg {
+		vertical-align: middle;
+		fill:#171616;
+	}
+
+	&:hover {
+		color:#EC0039;
+
+		svg {
+			fill:#EC0039;
+		}
+	}
+}
+
+b, strong {
+	font-weight:bold;
+}
+
+i, em {
+	font-style:italic;
+}
+
+/* list */
+ol:not([class]), ul:not([class]) {
+	margin-block-end: 20px;
+
+	li {
+		display:table;
+		position: relative;
+		padding-inline-start: 34px;
+
+		&::before{
+			inset-inline-start:0;
+			inset-block-start:2px;
+		}
+
+		&:not(:last-child) {
+			margin-block-end: 10px;
+		}
+	}
+}
+
+table, .table {
+	ol:not([class]) li, ul:not([class]) li {
+		display: block;
+	}
+}
+
+ol:not([class]) {
+	counter-reset: number;
+
+	li {
+		&::before {
+			position: absolute;
+			counter-increment: number;
+			content: counter(number); 
+			text-align: center;
+			inline-size:22px;
+			block-size:22px;
+			line-height: 22px;
+			background: #D70304;
+			font-size: 14px;
+			font-weight: 700;
+			color:#fff;
+			border-radius: 100%; 
+		}
+	}
+}
+
+ul:not([class]){
+	li {
+		font-weight: 500;
+		
+		&::before {
+			position: absolute;
+			content: "";
+			@include sprite(22px,22px,"../img/sprite.svg#sprite--arrow-circle");
+		}
+	}
+}
+
+summary {
+	list-style: none;
+
+	&::marker {
+        display: none;
+    }
+
+    &::-webkit-details-marker {
+        display: none;
+        color: transparent;
+    }
+}
+
+/* img */
+img {
+	display:block;
+	margin:0 auto;
+}
+
+.img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius:5px;
+	padding:5px;
+}
+
+.figure {
+	margin-block-end: 20px;
+}
+
+/* transition */
+* {
+	transition:all .3s;
+}
+
+/* btn */
+.btn {
+	display: block;
+	block-size:38px;
+	line-height: 38px;
+	border-radius:5px;
+	cursor:pointer;
+	text-align: center;
+	text-decoration: none;
+	overflow: hidden;
+	font-size: 14px;
+	text-transform: uppercase;
+	margin:0 auto;
+}
+
+/* breadcrumbs */
+.breadcrumbs {
+	justify-content: flex-start;
+	align-content: center;
+	margin-block-end: 15px;
+
+	&__item, &-link {
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 18px;
+	}
+
+	&__item {
+		color:#5C5C5C;
+
+		&:not(:last-child) {
+			margin-inline-end:20px;
+		}
+	}
+
+	&-link {
+		position: relative;
+		text-decoration: none;
+		color:rgba(#5C5C5C,.5);
+
+		&:hover {
+			color:#5C5C5C;
+			text-decoration: underline;
+		}
+
+		&::after {
+			position: absolute;
+			content: "";
+			@include sprite(5px,8px,"../img/sprite.svg#sprite--breadcrumbs");
+			inset-block-start:4px;
+			inset-inline-end: -12px;
+		}
+	}
+}
+
+/* soc */
+.soc {
+	gap:8px;
+
+	&-link {
+		inline-size:32px;
+		block-size:32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 100%;
+		border: 1px solid rgba(#000,.2);
+
+		svg {
+			fill:#171616;
+
+			path {
+				fill:#171616;
+			}
+		}
+
+		&:hover {
+			background: #D70304;
+			border-color:#D70304;
+
+			svg {
+				fill:#fff;
+			}
+		}
+	}
+}
+
+/* scroll */
+.scroll {
+	overflow: auto;
+	-ms-scroll-chaining: none;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	scrollbar-width: thin;
+	scrollbar-color: #DCDFE9 transparent;
+}
+
+.scroll::-webkit-scrollbar {
+	inline-size: 4px;
+	block-size: 50%;
+}
+
+.scroll::-webkit-scrollbar-track {
+	background-color: transparent; 
+}
+
+.scroll::-webkit-scrollbar-thumb {
+	background-color: #DCDFE9;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; 
+	min-block-size: 50%;
+	min-inline-size: 4px; 
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+	background-color: #DCDFE9; 
+}
+
+.scroll::-webkit-scrollbar-thumb:active {
+	background-color: #DCDFE9; 
+}
+
+/* swiper */
+.swiper-wrapper {
+	display: flex;
+
+	.swiper-slide {
+		block-size:auto;
+	}
+}
+
+/* container */
+.container {
+	max-inline-size:1180px;
+	padding:0 20px;
+	margin:0 auto;
+}
+
+main {
+	flex:1;
+}
+
+.mask {
+	width: 100px;
+	height: 100px;
+	background-color: white;
+
+	mask-image:
+		url("https://mdn.github.io/shared-assets/images/examples/mdn.svg"),
+		url("https://mdn.github.io/shared-assets/images/examples/mask-star.svg");
+	mask-size: 100% 100%;
+
+	mask-composite: add;
+
+	mask-mode: alpha;
+}
+
+.img {
+	mask-size: 95%, 100%;
+  	mask-position: center;
+  	mask-repeat: no-repeat;
+  	mask-image:
+    url("https://mdn.github.io/shared-assets/images/examples/mask-star.svg"),
+    radial-gradient(red 30%, transparent 60%);
+}
+
+.text {
+	outline: 4px double #32a1ce;
+	outline-offset: 12px;
+	border:1px solid red;
+	border-radius: 20px;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color:black;
+	// inline-size: max-content;
+	max-inline-size: 100%;
+}
+
+@keyframes move {
+  from {
+    offset-distance: 0%;
+  }
+
+  to {
+    offset-distance: 100%;
+  }
+}
+
+#offsetElement {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  offset: path("M 100 100 L 300 100 L 200 300 z") auto;
+  animation: move 3s linear infinite;
+}

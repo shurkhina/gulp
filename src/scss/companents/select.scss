@@ -1,0 +1,103 @@
+/* select */
+@use '../base/mixins' as *;
+
+.choice {
+    position: relative;
+    block-size:48px;
+
+    select {
+        display: none;
+    }
+
+    .select  {
+        position: absolute;
+        display: flex;
+        flex-wrap:wrap;
+        align-items: start;
+        gap:10px;
+        inline-size:100%;
+        min-block-size:48px;
+        max-block-size:48px;
+        overflow: hidden;
+        background: #1d1b25;
+        border-radius: 25px;
+        cursor: pointer;
+        text-align: left;
+        transition: none;
+        padding:14px 25px 10px 25px;
+
+        &::after {
+            position: absolute;
+            z-index: 0;
+            content:"";
+            @include sprite(12px,6px,"../img/sprite.svg#sprite--arrow-down");
+            inset-inline-end:29px;
+            inset-block-start:21px;
+            transition:all .3s;
+        }
+
+        .value {
+            position: relative;
+            z-index: 2;
+            flex:1;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            padding-inline-end: 30px;
+            margin-block-start: 3px;
+        }
+
+        &.active {
+            z-index: 5;
+            min-block-size:200px;
+            max-block-size:200px;
+            overflow: visible;
+
+            &::after {
+                transform: rotate(-180deg);
+            }
+
+            .hidden {
+                display: none;
+            }
+        }
+    }
+
+    .scroll-wrapper {
+		min-inline-size:100%;
+		max-block-size:100%;
+		overflow: hidden;
+	}
+
+    &-input {
+        background: transparent;
+        border-bottom:1px solid rgba(#fff,.1);
+        border-radius: 0;
+        margin-block-end: 10px;
+    }
+
+	.optList {
+        max-block-size:120px;
+	}
+
+    .option {
+		display: flex;
+		justify-content: flex-start;
+		gap:10px;
+		align-items: center;
+		flex-wrap: nowrap;
+    	position: relative;
+    	cursor:pointer;
+    	line-height: 16px;
+		font-size: 14px;
+		font-weight: 500;
+
+        &:not(:last-child) {
+            margin-block-end: 12px;
+        }
+
+		&:hover {
+			color:#fff;
+		}
+    }
+}

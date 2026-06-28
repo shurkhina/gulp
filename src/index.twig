@@ -1,0 +1,46 @@
+{% extends "components/default.twig" %}
+
+{% block title %}Index Page{% endblock %}
+
+{% block content %}
+  	<main>
+  		<div class="container">
+  			<h1>sdlfjslfjlfjlsfj</h1>
+			<p>sdlfjsldfsfj s dfljs flsf sdf lksjds flsdfj sdf;  flskjfs </p>
+
+
+			<form action="">
+				<input type="text" name="text" placeholder="Text">
+			</form>
+
+
+			<div class="rating-svg ">
+				<svg viewBox="-1 -1 34 34" class="rating-circle" >
+					<circle class="circle_bg"  cx="16" cy="16" r="15" stroke-dasharray="100"/>
+					<circle class="circle"     cx="16" cy="16" r="15" stroke-dasharray="60, 100"/>
+				</svg>
+				<div class="rating-procent"></div>
+			</div>
+
+			<div class="rating-line">
+				<div class="rating-header flexbox">
+					<div class="rating-line-title">Zaufanie i bezpieczeństwo</div>
+					<div class="rating-line-total">9.8</div>
+				</div>
+				<div class="rating-progress">
+					<span class="rating-range"></span>
+				</div>
+			</div>
+
+			<div class="rating-star flexbox">
+				<div class="rating-star-progress">
+					<span style="width: 100%;" class="rating-range"></span>
+				</div>
+				<div class="rating-total"><span class="rating-total-span">4</span>/5</div>
+			</div>
+
+			{% include "components/faq.twig" %}
+			
+  		</div>
+  	</main>
+{% endblock %}

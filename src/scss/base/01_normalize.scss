@@ -1,0 +1,83 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, pre,
+a, abbr, address, big, blockquote, cite, code,
+del, dfn, em, img, ins, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li, form, label, input, fieldset, legend, caption,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, main, nav, output, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	border: none;
+	outline:  none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+body {
+	line-height: 1;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+ol, ul, nav, menu {
+	list-style: none;
+}
+img, video, canvas {
+  max-width: 100%;
+  height:auto;
+}
+img {
+	vertical-align:bottom;
+}
+a, button {
+	cursor: pointer;
+	margin:0;
+	padding:0;
+}
+a:hover, button:hover {
+	cursor: pointer;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+button {
+	border:none;
+	background: transparent;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width:100%;
+}
+th, td {
+	vertical-align: middle;
+}
+iframe {
+	width: 100%;
+}

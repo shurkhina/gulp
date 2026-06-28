@@ -1,0 +1,133 @@
+/* tablecontent */
+@use '../base/mixins' as *;
+
+.tablecontent {
+    background: #fff;
+    box-shadow: 0px 5px 40px 0px rgba(#B9B9C4,.4);
+    border-radius: 10px;
+    padding:20px 25px;
+    margin-block-end: 40px;
+
+    &.open {
+        .tablecontent-block {
+            grid-template-rows: 1fr;
+            padding-block-start: 20px;
+        }
+
+        .heading {
+            &::after {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+	.heading {
+		inline-size:100%;
+		text-align: left;
+		display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap:12px;
+        inline-size:100%;
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 130%;
+        color:#333;
+
+        &::before {
+			content:"";
+            @include sprite(16px,12px,"../img/sprite.svg#sprite--content-icon");
+        }
+
+        &::after {
+            content:"";
+            @include sprite(14px,9px,"../img/sprite.svg#sprite--arr-down");
+            transition: all .3s;
+            margin-inline-start: auto;
+        }
+	}
+
+    &-block {
+        display: grid;
+        grid-template-rows: 0fr;
+    }
+
+	&-list {
+        overflow: hidden;
+        counter-reset: number;
+        margin-block-end: 0;
+
+        a:not([class]), a {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap:0 3px;
+            color:#333333;
+            text-decoration: none;
+
+            &::before {
+                display: inline-block;
+                position: static;
+                align-self: start;
+            }
+        }
+
+		li:not([class]), li {
+            padding-inline-start: 0;
+
+            a:not([class]), a {
+                &::before {
+                    counter-increment: number;
+                    content:counter(number) ". ";
+                }
+
+                &:hover {
+                    color: #06AFF8;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-block-end: 10px;
+            }
+
+            ol:not([class]), ol {
+                min-inline-size:100%;
+                counter-reset: list;
+                margin-inline-start: 20px;
+                margin-block-end: 0;
+
+                li {
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                a:not([class]), a {
+                    &::before {
+                        counter-increment: list;
+                        content: counter(number) "." counter(list) ". ";
+                    }
+                }
+
+                ol:not([class]), ol {
+                    counter-reset: sub;
+
+                    a:not([class]), a {
+                        &::before {
+                            counter-increment: sub;
+                            content: counter(number) "." counter(list) "." counter(sub) ". ";
+                        }
+                    }
+                }
+            }
+		}
+
+        ol {
+            margin-block-start: 10px;
+        }
+	}
+
+    @media screen and (max-width:768px) {
+        padding:20px;
+    }
+}

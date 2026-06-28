@@ -1,0 +1,98 @@
+/* copy */
+.copy {
+    position: relative;
+    display: inline-flex;
+    background: #F0FAF2;
+    border: 2px dashed #02891A;
+    border-radius: 7px;
+    justify-content: center;
+    padding:10px;
+
+    &:hover {
+        opacity: .5;
+    }   
+
+    &-block {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+
+        &::after {
+            content:"";
+            @include sprite(16px,16px,"../img/sprite.svg#sprite--copy-icon");
+        }
+    }
+
+    &-text {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        text-transform: uppercase;
+        color:#02891A;
+    }
+
+    &-copied {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: -1;
+        opacity: 0;
+        width:100%;
+        height:100%;
+        left:0;
+        top:0;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color:#02891A;
+        border-radius: 7px;
+    }
+
+    &-input {
+        position: absolute;
+        z-index: 1;
+        width:100%;
+        height:100%;
+        top:0;
+        bottom:0;
+        left:0;
+        border-radius: 25px;
+        opacity: 0;
+        cursor: pointer;
+
+        &:valid:not(:focus):not(:placeholder-shown), &:focus, &:valid, &:valid:not(:focus):not(:placeholder-shown), &:focus:valid {
+            border-color:#02891A;
+        }
+    }
+
+    &.active {
+        .copy {
+            &-copied {
+                animation: 3s linear  animate;
+                z-index: 1; 
+            }
+            
+            &-block {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+@keyframes animate {
+  
+  0%{ 
+    opacity: 0; 
+  }
+  
+  20%{ 
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+  
+}

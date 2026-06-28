@@ -1,0 +1,59 @@
+/* faq */
+@use '../base/mixins' as *;
+
+.faq {
+	counter-reset:number;
+
+	&__item {
+		position: relative;
+		overflow: hidden;
+		border-radius: 15px;
+		border: 1px solid #D9D5EF;
+		padding:25px;
+
+		&:not(:last-child) {
+			margin-block-end: 15px;
+		}
+
+		.text {
+			padding-block-start: 15px;
+		}
+
+		.heading {
+			&::before {
+				counter-increment:number;
+				content: counter(number) ". ";
+			}
+		}
+
+		&.open {
+			background: #F9F9FF;
+
+			.faq-heading {
+				&::after {
+					transform:rotate(-180deg);
+				}
+			}
+		}
+	}
+
+	&-heading {
+		align-items: center;
+		flex-wrap: nowrap;
+		gap:15px;
+
+		&::after {
+			content:"";
+			@include sprite(16px,10px,"../img/sprite.svg#sprite--arrow-dark");
+			min-inline-size:16px;
+			transition:transform .3s;
+			margin-inline-start: auto;
+		}
+	}
+
+	@media screen and (max-width:768px) {
+		&__item {
+			padding:20px;
+		}
+	}
+}
